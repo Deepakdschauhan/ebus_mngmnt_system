@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import "../style/forms.css";
 
 const SearchBus = () => {
   const [buses, setBuses] = useState([]);

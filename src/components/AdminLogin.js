@@ -1,8 +1,11 @@
 // src/components/AdminLogin.js
+
 import { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "../style/forms.css";
+
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");

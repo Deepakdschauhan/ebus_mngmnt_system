@@ -4,6 +4,7 @@ import { db, auth } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "../style/forms.css";
 
 
 const DriverDashboard = () => {

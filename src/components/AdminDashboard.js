@@ -3,6 +3,7 @@ import { useState } from "react";
 import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
+import "../style/forms.css";
 
 
 const AdminDashboard = () => {
@@ -13,6 +14,7 @@ const AdminDashboard = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setMessage("");
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
@@ -24,18 +26,21 @@ const AdminDashboard = () => {
         role,
       });
 
-      setMessage(`Successfully created ${role} account!`);
+      alert("Successfully created");
       setEmail("");
       setPassword("");
+      
     } catch (error) {
       setMessage("Error creating account. Try again.");
     }
   };
+  
 
   return (
     <div>
       <h2>Admin Dashboard</h2>
       <p>Create Driver/Traveler Account</p>
+      <p></p>
       {message && <p>{message}</p>}
       <form onSubmit={handleRegister}>
         <input
