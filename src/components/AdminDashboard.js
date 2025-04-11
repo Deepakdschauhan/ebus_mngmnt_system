@@ -26,7 +26,7 @@ const AdminDashboard = () => {
         role,
       });
 
-      alert("Successfully created");
+      alert("Created successful!");
       setEmail("");
       setPassword("");
       

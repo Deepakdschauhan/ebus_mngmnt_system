@@ -1,7 +1,8 @@
 // src/components/DriverLocation.js
 import { useState, useEffect } from "react";
-import { db, auth } from "../firebase";
+import { auth } from "../firebase";
 import { ref, set } from "firebase/database";
+import {database} from "../firebase";
 
 
 const DriverLocation = () => {
@@ -18,7 +19,7 @@ const DriverLocation = () => {
             setLongitude(position.coords.longitude);
 
             if (auth.currentUser) {
-              const busLocationRef = ref(db, `busLocations/${auth.currentUser.uid}`);
+              const busLocationRef = ref(database, `busLocations/${auth.currentUser.uid}`);
               set(busLocationRef, {
                 latitude: position.coords.latitude,
                 longitude: position.coords.longitude,

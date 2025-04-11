@@ -1,7 +1,7 @@
 // src/components/UserBusTracker.js
 
 import { useState, useEffect } from "react";
-import { db } from "../firebase";
+import { database } from "../firebase";
 import { ref, onValue } from "firebase/database";
 
 
@@ -9,7 +9,7 @@ const UserBusTracker = () => {
   const [busLocations, setBusLocations] = useState({});
 
   useEffect(() => {
-    const busLocationRef = ref(db, "busLocations");
+    const busLocationRef = ref(database, "busLocations");
     onValue(busLocationRef, (snapshot) => {
       if (snapshot.exists()) {
         setBusLocations(snapshot.val());

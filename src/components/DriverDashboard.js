@@ -30,6 +30,7 @@ const DriverDashboard = () => {
       setMessage("Bus details added successfully!");
       setBusNumber("");
       setRoute("");
+      
       setBusType("AC");
       setContact("");
     } catch (error) {
@@ -61,6 +62,7 @@ const DriverDashboard = () => {
           onChange={(e) => setRoute(e.target.value)}
           required
         />
+        
         <select value={busType} onChange={(e) => setBusType(e.target.value)}>
           <option value="AC">AC</option>
           <option value="Non-AC">Non-AC</option>
