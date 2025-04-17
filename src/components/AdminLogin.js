@@ -1,5 +1,3 @@
-// src/components/AdminLogin.js
-
 import { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";

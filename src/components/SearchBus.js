@@ -1,4 +1,3 @@
-// src/components/SearchBus.js
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
@@ -46,7 +45,7 @@ const SearchBus = () => {
       <h3>Available Buses</h3>
       {filteredBuses.length > 0 ? (
         filteredBuses.map((bus) => (
-          <div key={bus.id} style={{ border: "1px solid black", padding: "10px", margin: "5px" }}>
+          <div key={bus.id} style={{ border: "1px solid black", padding: "10px", margin: "5px",background:"LightGoldenrodYellow	" }}>
             <p><b>Bus Number:</b> {bus.busNumber}</p>
             <p><b>Route:</b> {bus.route}</p>
             <p><b>Bus Type:</b> {bus.busType}</p>

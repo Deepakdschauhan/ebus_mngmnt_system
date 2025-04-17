@@ -1,4 +1,3 @@
-// src/components/UserAuth.js
 import { useState } from "react";
 import { auth } from "../firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
@@ -50,8 +49,10 @@ const UserAuth = () => {
         />
         <button type="submit">{isRegister ? "Register" : "Login"}</button>
       </form>
-      <p onClick={() => setIsRegister(!isRegister)} style={{ cursor: "pointer", color: "blue" }}>
+      <p>
+      <button onClick={() => setIsRegister(!isRegister)} style={{ cursor: "pointer", color: "black" }}>
         {isRegister ? "Already have an account? Login" : "Don't have an account? Register"}
+      </button>
       </p>
     </div>
   );

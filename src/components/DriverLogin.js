@@ -1,4 +1,3 @@
-// src/components/DriverLogin.js
 import { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -16,7 +15,7 @@ const DriverLogin = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Driver logged in successfully!");
-      navigate("/driver-dashboard");
+      navigate("/driver_dashboard");
     } catch (error) {
       setError("Invalid email or password!");
     }

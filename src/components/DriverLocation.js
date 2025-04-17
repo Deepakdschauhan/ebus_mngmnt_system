@@ -1,4 +1,3 @@
-// src/components/DriverLocation.js
 import { useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { ref, set } from "firebase/database";

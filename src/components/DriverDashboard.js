@@ -1,10 +1,11 @@
-// src/components/DriverDashboard.js
 import { useState } from "react";
 import { db, auth } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "../style/forms.css";
+import { doc, setDoc } from "firebase/firestore";
+
 
 
 const DriverDashboard = () => {
@@ -27,6 +28,10 @@ const DriverDashboard = () => {
         timestamp: new Date(),
       });
 
+      await setDoc(doc(db, "busNumberMap", busNumber), {
+        uid: auth.currentUser.uid
+      });
+
       setMessage("Bus details added successfully!");
       setBusNumber("");
       setRoute("");
@@ -36,6 +41,10 @@ const DriverDashboard = () => {
     } catch (error) {
       setMessage("Error adding bus details.");
     }
+  };
+
+  const liveLocation = () => {
+    navigate("/driver_location");
   };
 
   const handleLogout = () => {
@@ -76,6 +85,7 @@ const DriverDashboard = () => {
         />
         <button type="submit">Post Bus Info</button>
       </form>
+      <button onClick={liveLocation}>Live Your Location</button><br></br><br></br>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

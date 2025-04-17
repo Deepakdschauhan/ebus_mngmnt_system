@@ -1,3 +1,4 @@
+
 /* General form styling */
 form {
     max-width: 400px;
@@ -34,7 +35,7 @@ form {
   
   /* Buttons */
   button {
-    width: 100%;
+    width: 30%;
     padding: 10px;
     background-color: #007bff;
     color: white;
@@ -47,6 +48,14 @@ form {
   
   button:hover {
     background-color: #0056b3;
+  }
+
+  h3{
+    color: Gold;
+  }
+  p{
+    color:black;
+    
   }
   
   /* Error message styling */
@@ -68,4 +77,6 @@ form {
       padding: 15px;
     }
   }
+
+
   
